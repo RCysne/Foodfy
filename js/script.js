@@ -7,7 +7,7 @@ for (let pratoR of pratos) {
     const h3 = '';
     const p = '';
     modalOverlay.classList.add('active');
-    modalOverlay.querySelector('img').src = `../images/${imageId}.png`;
+    modalOverlay.querySelector('img').src = `/images/${imageId}.png`;
     // modalOverlay.querySelector('.nomePrato'). = 
     // modalOverlay.querySelector('.nomeChef'). =
   });

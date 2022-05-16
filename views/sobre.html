@@ -1,28 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
-    <title>Foodfy</title>
-  </head>
+{% extends "layout.html"%}
 
-  <body>
-    <header>
-      <div class="header">
-        <div class="home">
-          <a href="../views/index.html">
-            <img src="../images/logo.png" alt="Logomarca Foodfy" />
-          </a>
-        </div>
-        <div class="menu">
-          <a href="../views/sobre.html" target="_blank">Sobre</a>
-          <a href="../views/receitas.html" target="_blank">Receitas</a>
-        </div>
-      </div>
-    </header>
-    <div class="center2">
+
+{% block content%}
+
+      <div class="center2">
       <h1>Sobre o Foodfy</h1>
       <p>
         Suspendisse placerat neque neque. Morbi dictum nulla non sapien rhoncus,
@@ -78,10 +59,5 @@
         faucibus enim ultricies euismod.
       </p>
     </div>
-    <footer>
-      <div class="footer">
-        <p>Todos direitos reservados, receitas Foodfy.</p>
-      </div>
-    </footer>
-  </body>
-</html>
+    
+{% endblock %}
