@@ -3,7 +3,7 @@
 const express = require('express'); // Requisitando o uso do Express
 const nunjucks = require('nunjucks');
 const server = express(); // Colocando a função do Express em uma variável
-
+const pratos = require("./data")
 
 
 // ========  CONFIGURAÇÕES DO SERVIDOR
@@ -14,9 +14,10 @@ server.use(express.static('public'))
 //Qual a engine usar e qual o tipo de arquivo.
 server.set("view engine", "html"); 
 
-//Local dos arquivos a serem lidos, na pasta views e utilizando o express e qual o arquivo que ele está olhando, no caso o server que está definindo a engine e a variável que está usando no express.
+//Local dos arquivos a serem lidos, na pasta views e utilizando o express e qual o arquivo que ele está olhando, no caso o server que está definindo a engine e a variável que está usando no express. Autoescape é para correção de de vazamento de código html
 nunjucks.configure("views", { 
-  express:server
+  express:server,
+  autoescape: false
 })
 
 
@@ -30,8 +31,8 @@ server.get('/', (req, res) => res.render('index'));
 // Criando a rota sobre.
 server.get('/sobre', (req, res) => res.render('sobre'));
 
-// Criando a rota das receitas.
-server.get('/receitas', (req, res) => res.render('receitas'));
+// Criando a rota das receitas. E tornando dinâmico criando o segundo parâmetro com o objeto e seus 
+server.get('/receitas', (req, res) => res.render('receitas', { items: pratos }));
 
 
 
